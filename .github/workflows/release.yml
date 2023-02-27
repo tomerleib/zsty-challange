@@ -22,6 +22,7 @@ jobs:
         run: cd ./app && go mod tidy
   docker:
     runs-on: ubuntu-latest
+    needs: [build]
     steps:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
