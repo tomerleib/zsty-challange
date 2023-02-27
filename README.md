@@ -13,3 +13,6 @@ In case such file does not exists, the user should create it by running the foll
 ```bash
 $ aws configure
 ```
+
+## Test
+To test the code here, use `verification.sh` code.
