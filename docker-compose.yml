@@ -1,5 +1,3 @@
-version: "3"
-
 services:
   dynamodb:
     image: zestyco/dynamodb-challenge:amd
@@ -9,3 +7,9 @@ services:
     image: tomerleib/goapp:latest
     ports:
       - "8080:8080"
+    volumes:
+      - ~/.aws:/root/.aws    
+    depends_on:
+      - dynamodb
+    environment:
+      - DYNDB=http://dynamodb:8000      
