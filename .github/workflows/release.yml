@@ -6,23 +6,8 @@ on:
       - 'main'
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Set up Go
-        uses: actions/setup-go@v3
-        with:
-          go-version: '1.20.x'
-      - name: Init Module
-        run: cd ./app && go mod init go-app
-        
-      - name: Build Dependencies
-        run: cd ./app && go mod tidy
   docker:
     runs-on: ubuntu-latest
-    needs: [build]
     steps:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
