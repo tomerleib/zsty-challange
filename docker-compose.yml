@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  dynamodb:
+    image: zestyco/dynamodb-challenge:amd
+    ports:
+      - "8000:8000"
+  go-web:
+    image: tomerleib/goapp:latest
+    ports:
+      - "8080:8080"
